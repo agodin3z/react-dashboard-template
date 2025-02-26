@@ -1,0 +1,57 @@
+{
+  "name": "react-dashboard-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "check": "biome check --files-ignore-unknown=true --write",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write",
+    "lint:ts": "tsc --project tsconfig.json --noEmit",
+    "preview": "vite preview",
+    "format": "prettier --write \"**/*.{json,jsonc}\"",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.476.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "19.7.1",
+    "@commitlint/config-conventional": "19.7.1",
+    "@eslint/js": "^9.21.0",
+    "@tailwindcss/vite": "^4.0.9",
+    "@types/node": "^22.13.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "globals": "^15.15.0",
+    "husky": "9.1.7",
+    "lint-staged": "15.4.3",
+    "prettier": "3.5.2",
+    "tailwindcss": "^4.0.9",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}": [
+      "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
+    ],
+    "*.{json,jsonc}": [
+      "prettier --write"
+    ]
+  },
+  "volta": {
+    "node": "20.18.3"
+  }
+}
