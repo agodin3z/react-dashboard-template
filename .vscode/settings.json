@@ -5,15 +5,24 @@
   "editor.formatOnSaveMode": "file",
   "editor.formatOnType": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript, typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
+  "[javascript, javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript, typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json, jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.codeActionsOnSave": {
-    "quickfix.biome": "explicit",
-    "source.organizeImports.biome": "explicit",
-    "source.formatDocument": "explicit"
-  }
+    "source.formatDocument": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "cssVariables.lookupFiles": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "node_modules/@mantine/core/styles.css"
+  ]
 }
