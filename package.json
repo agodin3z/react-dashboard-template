@@ -6,46 +6,64 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "check": "biome check --files-ignore-unknown=true --write",
-    "lint": "biome lint",
-    "lint:fix": "biome lint --write",
-    "lint:ts": "tsc --project tsconfig.json --noEmit",
     "preview": "vite preview",
-    "format": "prettier --write \"**/*.{json,jsonc}\"",
+    "lint": "eslint . --color --cache --report-unused-disable-directives --max-warnings 0 && stylelint '**/*.css' --cache --color",
+    "lint:fix": "eslint . --fix && stylelint '**/*.css' --fix",
+    "lint:ts": "tsc --project tsconfig.json --noEmit",
+    "format": "prettier --write \"**/*.{ts,tsx,json,jsonc}\"",
     "prepare": "husky"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.1.2",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
+    "@mantine/core": "^7.17.1",
+    "@mantine/dates": "^7.17.1",
+    "@mantine/form": "^7.17.1",
+    "@mantine/hooks": "^7.17.1",
+    "@mantine/modals": "^7.17.1",
+    "@mantine/notifications": "^7.17.1",
+    "@mantine/nprogress": "^7.17.1",
+    "axios": "^1.7.9",
+    "dayjs": "^1.11.13",
     "lucide-react": "^0.476.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.0.2",
-    "tailwindcss-animate": "^1.0.7"
+    "react-router-dom": "^7.2.0",
+    "yup": "^1.6.1",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "19.7.1",
     "@commitlint/config-conventional": "19.7.1",
     "@eslint/js": "^9.21.0",
-    "@tailwindcss/vite": "^4.0.9",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@types/node": "^22.13.5",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react-swc": "^3.8.0",
+    "eslint": "^9.18.0",
+    "eslint-config-mantine": "^4.0.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.4",
     "globals": "^15.15.0",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
+    "postcss": "^8.5.3",
+    "postcss-preset-mantine": "^1.17.0",
+    "postcss-simple-vars": "^7.0.1",
     "prettier": "3.5.2",
-    "tailwindcss": "^4.0.9",
+    "stylelint": "^16.13.2",
+    "stylelint-config-standard-scss": "^14.0.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
   },
   "lint-staged": {
-    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}": [
-      "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
+    "*.{ts,tsx}": [
+      "eslint --color --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint '**/*.css' --max-warnings=0"
     ],
     "*.{json,jsonc}": [
       "prettier --write"
