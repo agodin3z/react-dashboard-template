@@ -1,6 +1,7 @@
-import { IconUser } from '@tabler/icons-react';
+import { IconLogout } from '@tabler/icons-react';
 import { Burger, Button, Group, Text, Title } from '@mantine/core';
 
+import useSession from '@/store/use-session.store';
 import { ColorSchemeToggle } from './color-scheme-toggle';
 
 export function Header({
@@ -14,6 +15,9 @@ export function Header({
   opened?: boolean;
   toggle?: () => void;
 }) {
+  // TODO: improve sign out
+  const signOut = useSession((state) => state.signOut);
+
   return (
     <Group justify="space-between" h="100%" px="md">
       <Group gap="sm" align="center">
@@ -32,8 +36,8 @@ export function Header({
       <Group gap="sm" align="center">
         <ColorSchemeToggle />
         {isLoggedIn && (
-          <Button variant="light">
-            <IconUser size={22} stroke={1.5} />
+          <Button variant="primary" onClick={signOut}>
+            <IconLogout size={22} stroke={1.5} />
           </Button>
         )}
       </Group>
