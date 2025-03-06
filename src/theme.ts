@@ -1,5 +1,137 @@
-import { createTheme } from '@mantine/core';
+import { createTheme, rem } from '@mantine/core';
 
 export const theme = createTheme({
-  // TODO: Add custom mantine theme here
+  colors: {
+    primary: [
+      '#f8f1f9',
+      '#ebdfed',
+      '#d8bcdc',
+      '#c496cb',
+      '#b376bc',
+      '#a962b3',
+      '#a458af',
+      '#8f489a',
+      '#803f8a',
+      '#703579',
+    ],
+    success: [
+      '#ebfffc',
+      '#d7fdf8',
+      '#a9fdf2',
+      '#7bfdeb',
+      '#5dfde5',
+      '#50fde2',
+      '#47fde0',
+      '#3be1c6',
+      '#2bc8b0',
+      '#00ad97',
+    ],
+    info: [
+      '#ebf1ff',
+      '#d2dffa',
+      '#a1bbf7',
+      '#6d96f6',
+      '#4576f5',
+      '#3162f6',
+      '#2758f7',
+      '#1d49dc',
+      '#1441c5',
+      '#0037ad',
+    ],
+    warning: [
+      '#fff9e1',
+      '#fff1cb',
+      '#ffe29a',
+      '#ffd264',
+      '#ffc538',
+      '#ffbc1c',
+      '#ffb809',
+      '#e3a100',
+      '#ca8f00',
+      '#af7a00',
+    ],
+    danger: [
+      '#fff0e4',
+      '#ffe0ce',
+      '#fdbf9e',
+      '#fb9b69',
+      '#f97e3c',
+      '#f96b20',
+      '#f96111',
+      '#de5005',
+      '#c64601',
+      '#ad3a00',
+    ],
+    slate: [
+      '#f3f5f7',
+      '#e7e7e7',
+      '#cbccce',
+      '#acb1b6',
+      '#9299a1',
+      '#818a95',
+      '#778390',
+      '#65717d',
+      '#586471',
+      '#485765',
+    ],
+  },
+
+  white: '#F8F9FA',
+  black: '#1B1B1B',
+  primaryColor: 'primary',
+
+  shadows: {
+    xs: '0px 1px 2px rgba(0, 0, 0, 0.05)',
+    sm: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+    md: '0px 4px 6px rgba(0, 0, 0, 0.15)',
+    lg: '0px 6px 10px rgba(0, 0, 0, 0.2)',
+    xl: '0px 10px 20px rgba(0, 0, 0, 0.25)',
+  },
+
+  fontFamily: 'Inter, sans-serif',
+  fontFamilyMonospace: 'IBM Plex Mono, monospace',
+
+  headings: {
+    fontFamily: 'Poppins, sans-serif',
+    sizes: {
+      h1: {
+        fontSize: rem(48),
+        fontWeight: '600',
+        lineHeight: '1.2',
+      },
+      h2: {
+        fontSize: rem(36),
+        fontWeight: '600',
+        lineHeight: '1.3',
+      },
+      h3: {
+        fontSize: rem(28),
+        fontWeight: '500',
+        lineHeight: '1.4',
+      },
+      h4: {
+        fontSize: rem(22),
+        fontWeight: '500',
+        lineHeight: '1.4',
+      },
+      h5: {
+        fontSize: rem(18),
+        fontWeight: '400',
+        lineHeight: '1.5',
+      },
+      h6: {
+        fontSize: rem(16),
+        fontWeight: '400',
+        lineHeight: '1.5',
+      },
+    },
+  },
+
+  spacing: {
+    xs: rem(4),
+    sm: rem(8),
+    md: rem(16),
+    lg: rem(24),
+    xl: rem(32),
+  },
 });
