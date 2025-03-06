@@ -1,4 +1,7 @@
 import '@mantine/core/styles.css';
+import '@fontsource/inter/index.css';
+import '@fontsource/poppins/index.css';
+import '@fontsource/ibm-plex-mono/index.css';
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
