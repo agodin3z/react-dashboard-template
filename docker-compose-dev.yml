@@ -1,0 +1,15 @@
+version: '3'
+services:
+  react_dashboard_template_sandbox:
+    container_name: dashboard_react_sandbox
+    build:
+      context: .
+      target: development
+    command: bun run dev --host 0.0.0.0
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 127.0.0.1:8080:5173
+    env_file:
+      - .env

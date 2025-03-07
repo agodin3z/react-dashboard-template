@@ -1,0 +1,13 @@
+version: '3'
+services:
+  react_dashboard_template:
+    container_name: dashboard_react
+    build:
+      context: .
+      target: production
+      args:
+        - PROD=true
+    ports:
+      - 127.0.0.1:8080:4173
+    env_file:
+      - .env
